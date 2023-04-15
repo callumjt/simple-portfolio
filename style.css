@@ -3,12 +3,15 @@
     --profile-picture: sources/images/pfp.webp;
 
     /*Dont edit the above only edit below*/
-    /*For the pfp upload your file as pfp.webp or edit the last part above*/
+    /*For the pfp upload your file as pfp.webp or edit the extension above*/
 
     --right-width: 60%;
     --right-color: #1c1b22;
 
     --left-color: #4c1594;
+    --left-image: url(sources/images/backgroundImage.jpg);
+
+    /*To use a color and not an image just remove everything in the brackets*/
 
     --pfp-width: 160px;
     --pfp-height: 160px;
@@ -52,6 +55,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: var(--left-image);
+    background-size: 200%;
 }
 
 .right {
@@ -86,6 +91,7 @@ body {
     position: relative;
     top: 0;
     transition: all .3s;
+    z-index: 2;
 }
 
 .button {
@@ -135,4 +141,37 @@ body {
 
 #aboutText {
     word-wrap: break-word;
+}
+
+#socials2 {
+    position: absolute;
+    left: calc(var(--left-width) + 1%);
+    width: calc(var(--right-width) - 1%);
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transition: all .3s;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.socialIco {
+    width: 75px;
+    height: 75px;
+    filter: grayscale(1);
+    transition: all .3s;
+}
+
+.socialIco:hover {
+    filter: grayscale(0);
+}
+
+.github {
+    filter: invert(0.1);
+}
+
+.github:hover {
+    filter: invert(0);
 }
