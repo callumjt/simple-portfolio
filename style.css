@@ -1,0 +1,138 @@
+:root {
+    --left-width: calc(100% - var(--right-width));
+    --profile-picture: sources/images/pfp.webp;
+
+    /*Dont edit the above only edit below*/
+    /*For the pfp upload your file as pfp.webp or edit the last part above*/
+
+    --right-width: 60%;
+    --right-color: #1c1b22;
+
+    --left-color: #4c1594;
+
+    --pfp-width: 160px;
+    --pfp-height: 160px;
+
+    --button-color: black;
+    --button-width: 140px;
+    --button-height: 45px;
+    --button-radius: 6px;
+
+    --text-color: white;
+    --font: Sofia;
+
+    /*How to add a font
+    1. put a font in sources/fonts
+    2. add a @font-face under the already existing one
+    3. set --font to the name you set on the @font-face*/
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    color-scheme: dark;
+    font-family: var(--font);
+    overflow: none;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.left {
+    width: var(--left-width);
+    height: 100%;
+    position: absolute;
+    background-color: var(--left-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: none;
+}
+
+.right2 {
+    width: var(--right-width);
+    height: 100%;
+    background-color: var(--right-color);
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.profile {
+    width: var(--pfp-width);
+    height: var(--pfp-height);
+    border-radius: 999999px;
+}
+
+.buttons {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    top: 0;
+    transition: all .3s;
+}
+
+.button {
+    width: var(--button-width);
+    height: var(--button-height);
+    background-color: var(--button-color);
+    border-radius: var(--button-radius);
+    transition: all .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--button-color);
+}
+
+@font-face {
+    font-family:"Sofia";
+    src: url(sources/fonts/Sofia_Pro_Bold_Az.otf) format("opentype");
+}
+
+.arrow {
+    position: absolute;
+    top: 10px;
+    left: calc(var(--right-width) - 19%);
+    width: 20px;
+    height: 20px;
+    rotate: 180deg;
+    cursor: pointer;
+    transition: all .3s;
+    z-index: 2;
+}
+
+#text {
+    position: absolute;
+    left: calc(var(--left-width) + 1%);
+    width: calc(var(--right-width) - 1%);
+    top: 0;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    transition: all .3s;
+    flex-direction: column;
+}
+
+#aboutText {
+    word-wrap: break-word;
+}
